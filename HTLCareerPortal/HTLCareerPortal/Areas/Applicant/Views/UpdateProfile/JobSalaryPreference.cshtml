@@ -1,0 +1,111 @@
+﻿@model IEnumerable<HTLCareerPortal.tbl_JobSalaryPreference>
+
+@{
+    ViewBag.Title = "JobSalaryPreference";
+   
+}
+<div class="container">
+    @Html.Partial("_stepsView")
+    @Html.ActionLink("<< Back", "ExperienceDetail", "UpdateProfile", new object { }, new { @class = "Pre-btn" })
+    @Html.ActionLink("Next >>", "ProfessionalReference", "UpdateProfile", new object { }, new { @class = "Next-btn" })
+    <h4 class="step-number">You are at Step <span class="number">6<sup>th</sup></span> out of <span class="number">9</span> !</h4>
+
+    <h2 class="text-center">UPDATE JOB & SALARY PREFERENCES</h2>
+
+    <p>
+        @if (Model.Count() == 0)
+        {
+            @Html.ActionLink("Update Job & Salary Preference ", "UpdateJsp")
+        }
+
+    </p>
+    <table class="table">
+        <tr>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.JSP_ID)
+                </th>*@
+            <th>
+                Prefered Job Type I<sup>st</sup>
+            </th>
+            <th>
+                Prefered Job Type 2<sup>nd</sup>
+            </th>
+            <th>
+                Prefered Job Type 3<sup>rd</sup>
+            </th>
+            <th>
+               Prefered Job Grade I<sup>st</sup>
+            </th>
+            <th>
+                Prefered Job Grade 2<sup>nd</sup>
+            </th>
+            <th>
+                Prefered Job Grade   3<sup>rd</sup>
+            </th>
+            <th>
+              Salary
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Benifits)
+            </th>
+            <th>
+              Expected Gross Salary
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.App_Id)
+                </th>*@
+            <th>Edit  Remove</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.JSP_ID)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.PWT1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PWT2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PWT3)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tbl_FOI.FOI_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tbl_FOI1.FOI_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tbl_FOI2.FOI_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CurrentSalary)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Benifits)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExpectedGrossSalary)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.App_Id)
+                    </td>*@
+                <td>
+                    @Html.ActionLink("Edit", "EditJSP", new { id = item.JSP_ID }) 
+                    @Html.ActionLink("Remove", "RemoveJsp", new { id = item.JSP_ID })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    @*@Html.ActionLink("Next >>", "ProfessionalReference", "UpdateProfile", new object { }, new { @class = "Next-btn" })*@
+
+
+
+
+
+</div>

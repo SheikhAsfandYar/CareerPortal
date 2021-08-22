@@ -1,0 +1,77 @@
+﻿@model  IEnumerable<HTLCareerPortal.Areas.Applicant.Models.AppliedJobs>
+@{
+    ViewBag.Title = "AppliedJobs";
+}
+<link href="~/Content/dashboard.css" rel="stylesheet" />
+<section class="section section-destination">
+    <!-- Title -->
+    <div class="section-title1">
+        <div class="container">
+            <h2 class="title">JOBS Applied By You!</h2>
+        </div>
+    </div>
+</section>
+<div class="container">
+    <div data-aos="flip-right" class="statistics-box1 Heading-box">
+        <div class="statistics-item">
+            <img src="~/img/jobTitle.jpg" height="60px" width="50px" />
+            <p class="value">JOB TITLE</p>
+        </div>
+        <div class="statistics-item">
+            <img src="~/img/department.png" height="60px" width="60px" />
+            <p class="value">JOB TYPE</p>
+        </div>
+        <div class="statistics-item">
+            <img src="~/img/location.jpg" height="60px" width="60px" />
+            <p class="value">LOCATION</p>
+        </div>
+        <div class="statistics-item">
+            <img src="~/img/date.png" height="60px" width="60px" />
+            <p class=" value">DATE</p>
+        </div>
+        <div class="statistics-item">
+            <img src="~/img/remove.png" height="60px" width="60px" />
+            <p class=" value">REMOVE</p>
+        </div>
+    </div>
+</div>
+
+@foreach (var item in Model)
+{
+    <div data-aos="flip-left" class="container">
+        <div class="statistics-box">
+
+            <div class="statistics-item">
+
+                <p class="value">@item.jobtitle.ToString()</p>
+            </div>
+
+            <div class="statistics-item">
+
+
+                <p class="value">@item.jobtype</p>
+
+            </div>
+
+            <div class="statistics-item">
+
+                <p class="value">@item.cityname</p>
+            </div>
+
+            <div class="statistics-item">
+
+                <p class="value">@item.applyDate</p>
+            </div>
+            <div class="statistics-item">
+
+                <p class="value">
+                   <a href="@Url.Action("RemoveAppliedJob", "Home", new { id = item.id })">REMOVE</a></p>
+            </div>
+            
+
+        </div>
+    </div>
+}
+
+
+

@@ -1,0 +1,58 @@
+﻿@model IEnumerable<HTLCareerPortal.tbl_SignUp>
+
+<h2 class="text-center text-danger main-heading">
+LIST OF ALL SIGNED-IN APPLICANTS !
+</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group First-row">
+        <label>GENDER :</label>
+        @Html.DropDownList("Gender", new SelectList(new[] { new SelectListItem { Value = "", Text = "Both" }, new SelectListItem { Value = "Male", Text = "Male" }, new SelectListItem { Value = "Female", Text = "Female" }, }, "Value", "Text"), new { @class = "form-control searching" })
+        <label>EMAIL :</label>@Html.TextBox("Email", "", new { @class = "form-control searching" })<input type="submit" name="submit" value="Search" class=" btn btn-default">
+    </div>
+}
+<table class="table">
+    <tr>
+        <th>
+           NAME
+        </th>
+        <th>
+            GENDER
+        </th>
+        <th>
+           CITY
+        </th>
+        <th>
+            EMAIL ID
+        </th>
+        <th>
+            CELL NO
+        </th>
+        <th>VIEW PROFILE</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CellNo)
+        </td>
+        <td>
+            @Html.ActionLink("View Profile", "ApplicantProfile", new { id = item.ApplicantId }, new {@class="btn btn-sm btn-info" }) 
+        </td>
+    </tr>
+}
+
+</table>

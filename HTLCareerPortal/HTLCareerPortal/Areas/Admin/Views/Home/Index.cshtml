@@ -1,0 +1,109 @@
+﻿@model IEnumerable<HTLCareerPortal.Areas.Admin.Models.AppliedFor>
+@using HTLCareerPortal.Models
+<h2 class="text-center text-danger main-heading"> FIND YOUR BEST EMPLOYEE NOW..!</h2>
+<div class="filter-form">
+    @using (Html.BeginForm())
+    {
+        <div class="form-group First-row">
+            @Html.DropDownList("DepartmentId", (IEnumerable<SelectListItem>)ViewBag.Department, "Select Department", new { @class = "form-control searching" })
+            @Html.DropDownList("JobTitle", (IEnumerable<SelectListItem>)ViewBag.JobTitles, "Select Job Title", new { @class = "form-control searching1" })
+            @Html.DropDownList("Gender", new SelectList(new[] { new SelectListItem { Value = "", Text = "Gender" }, new SelectListItem { Value = "Male", Text = "Male" }, new SelectListItem { Value = "Female", Text = "Female" }, }, "Value", "Text"), new { @class = "form-control searching" })
+        </div>
+        <div class="form-group third-row">
+
+            <label>Current Salary:</label>
+            @Html.TextBox("CurrentSalary", "", new { @class = "form-control searching", @type = "Number" })
+            <label>Expected Salary:</label>
+            @Html.TextBox("ExpectedSalary", "", new { @class = "form-control searching", @type = "Number" })
+            <label>Apply KeyWords:</label>
+            @Html.TextBox("Keywords", "", new { @class = "form-control searching" })
+
+        </div>
+        <div class="form-group second-row">
+
+            @*@Html.DropDownList("City", (IEnumerable<SelectListItem>)ViewBag.City, "Select City", new { @class = "form-control searching" })*@
+            <label>DATE FROM:</label>
+            @Html.TextBox("DateFrom", "", new { @class = "form-control searching", @type = "Date" })
+            <label>DATE TO:</label>
+            @Html.TextBox("DateTo", "", new { @class = "form-control searching", @type = "Date" })
+            @Html.DropDownList("City", new SelectList(Enum.GetValues(typeof(Cities))), "Select City", new { @class = "form-control searching" })
+            <input type="submit" name="submit" value="SEARCH" class=" btn btn-default  btn-danger filter-btn">
+
+            <input type="submit" name="submit" value="EXCEL" formaction="Home/Excel" formmethod="post" class=" btn btn-default btn-success filter-btn ">
+        </div>
+    }
+</div>
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+            <th>
+                JOB TITLE
+            </th>
+            <th>
+                NAME
+            </th>
+            <th>
+                EMAIL ID
+            </th>
+            <th>
+                GENDER
+            </th>
+            <th>
+                CITY
+            </th>
+            <th>
+                APPLY DATE
+            </th>
+            <th>
+                PROFILE
+            </th>
+            <th>
+                SELECT HOD
+            </th>
+            <th>
+                SEND
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            string hodName = "hodName" + @item.App_Id.ToString() + @item.JobId.ToString();
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JobTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApplicantName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApplicantEmail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.applyDate))
+                </td>
+                <td>
+                    @Html.ActionLink("Profile", "ApplicantProfile", new { id = item.App_Id }, new {@class ="link btn btn-sm btn-info" })
+                </td>
+                <td>
+
+                    @Html.DropDownList("Hod", (IEnumerable<SelectListItem>)ViewBag.Hodlist, "Select Hod", new { @id = (hodName), @class = "form-control " })
+
+                </td>
+                <td>
+                    @*<button class="btn btn-default view-list-btn" type="submit" formmethod="post" formaction="Home/SentToHod">Sent</button>*@
+                    <input type="button" name="list" class="form-submit btn btn-sm " onclick="SendList('@item.JobId','@item.App_Id','@item.DepartmentId')" value="SEND" />
+                    @* <input type="button" name="view" class="form-submit btn  btn-lg" data-toggle="modal" data-target="#myModal2" onclick="GetAll()" value="List" />*@
+                    @*   @Html.ActionLink("SEND", "PassToHod", new { jobid = item.JobId, appid = item.App_Id, depid = item.DepartmentId, onclick = "SendList('@item.JobId','@item.App_Id','@item.DepartmentId');" })*@
+                </td>
+
+            </tr>
+        }
+    </table>
+</div>

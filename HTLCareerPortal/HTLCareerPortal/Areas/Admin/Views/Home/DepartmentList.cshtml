@@ -1,0 +1,41 @@
+﻿@model IEnumerable<HTLCareerPortal.tbl_Department>
+<h2 class="main-heading text-center">DEPARTMENT SETUP</h2>
+<hr/>
+<h4 class="text-center">
+    @Html.ActionLink("ADD NEW DEPARTMENT", "AddDepartment")
+</h4>
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.DepId)
+        </th>*@
+        <th>
+           DEPARTMENT NAME
+        </th>
+        <th>
+           DEPARTMENT HOD
+        </th>
+        <th>UPDATE </th>
+        <th> REMOVE</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.DepId)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.DepName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepHod)
+        </td>
+        <td>
+            @Html.ActionLink("Update ", "UpdateDepartment", new { id=item.DepId }, new { @class = "btn btn-sm btn-default" }) 
+        </td>
+        <td>
+            @Html.ActionLink("Remove", "RemoveDepartment", new { id = item.DepId }, new { @class = "btn btn-sm btn-danger" })</td>
+    </tr>
+}
+
+</table>

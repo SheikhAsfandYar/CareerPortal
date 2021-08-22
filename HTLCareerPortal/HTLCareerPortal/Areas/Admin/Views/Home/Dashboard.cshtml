@@ -1,0 +1,76 @@
+﻿@model IEnumerable<HTLCareerPortal.JobSetup>
+
+<h2 class="text-center text-danger main-heading">JOBS DASHBOARD...!</h2>
+<div class="col-md-12">
+    <div class="dashboard-heading">
+        <h3 class="first">TOTAL NO. OF POSITIONS ARE : <span class="noofjobs">@ViewBag.TotalJobs</span></h3>
+        <h3 class="Second"> TOTAL NO. OF APPLICANTS ARE : <span class="noofjobs">@ViewBag.TotalApplicants</span></h3>
+    </div>
+</div>
+<div class="table-responsive">
+    
+    <table class="table table-striped table-hover" >
+        
+            <tr>
+                <th class="text-center">
+                    NO.
+                </th>
+                <th class="text-center">
+                    JOB TITLE
+                </th>
+                <th class="text-center">
+                    DEPARTMENT
+                </th>
+                <th class="text-center">
+                    OPENING DATE
+                </th>
+                <th class="text-center">
+                    CLOSING DATE
+                </th>
+                <th class="text-center">
+                    REMAINING DAYS
+                </th>
+            </tr>
+        @{ 
+            int count = 0;
+        }
+        @foreach (var item in Model)
+        {
+            count++;
+            int days = @Convert.ToDateTime(item.JobClosingDate).Subtract(DateTime.Now).Days;
+            <tr class="text-center">
+                <td>
+                   @count
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JobTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tbl_Department.DepName)
+                </td>
+                <td>
+                    @Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.JobOpeningDate))
+                </td>
+                <td>
+                    @Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.JobClosingDate))
+                </td>
+                <td class="text-danger text-center ">
+                    @if (days < 0)
+                    {
+                        @Html.Label("", "CLOSED / NEED UPDATE")
+                    }
+                    else
+                    {
+                        @Html.Label("", (days + " DAYS REMAINING").ToString(), new { @class = "text-success" })
+                    }
+                </td>
+                @*<td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>*@
+            </tr>
+        }
+
+    </table>
+</div>

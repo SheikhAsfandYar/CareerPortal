@@ -1,0 +1,56 @@
+﻿@model IEnumerable<HTLCareerPortal.tbl_AdminToHod>
+
+@{
+    ViewBag.Title = "SentToAdmin";
+}
+
+<h2 class="text-center text-danger main-heading">FORWARDED TO ADMIN ...!</h2>
+
+<table class="table">
+    <tr>
+       
+        <th class="text-center">
+           DEPARTMENT
+        </th>
+        <th class="text-center">
+           JOB TITLE
+        </th>
+        <th class="text-center">
+           APPLICANT NAME
+        </th>
+        <th class="text-center">
+            APPLICANT EMAIL
+        </th>
+        <th class="text-center">
+           SHORTLISTED / REJECTED
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td class="text-center">
+            @Html.DisplayFor(modelItem => item.tbl_Department.DepName)
+        </td>
+        <td class="text-center">
+            @Html.DisplayFor(modelItem => item.JobSetup.JobTitle)
+        </td>
+        <td class="text-center">
+            @Html.DisplayFor(modelItem => item.tbl_SignUp.Name)
+        </td>
+        <td class="text-center">
+            @Html.DisplayFor(modelItem => item.tbl_SignUp.EmailID)
+        </td>
+        <td class="text-center">
+            @if (item.Status == true)
+            {
+                <label class="text-success"> SHORTLISTED</label>
+            }
+            else
+            {
+                <label class="text-danger"> REJECTED</label>
+            }
+        </td>
+    </tr>
+}
+
+</table>

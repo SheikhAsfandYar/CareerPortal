@@ -1,0 +1,88 @@
+﻿@model IEnumerable<HTLCareerPortal.tbl_Education>
+
+@{
+    ViewBag.Title = "EducationDetail";
+    
+}
+<div class="container">
+    @Html.Partial("_stepsView")
+
+    @Html.ActionLink("<< Back", "CareerObjective", "UpdateProfile", new object { }, new { @class = "Pre-btn" })
+    @Html.ActionLink("Next >>", "ExperienceDetail", "UpdateProfile", new object { }, new { @class = "Next-btn" })
+
+
+    <h4 class="step-number">You are at Step <span class="number">4<sup>th</sup></span> out of <span class="number">9</span> !</h4>
+
+    <h2 class="text-center">UPDATE YOUR EDUCATION DETAILS</h2>
+
+    <p>
+        @Html.ActionLink("Add Education", "AddEducation","UpdateProfile")
+    </p>
+    <table class="table">
+        <tr>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Edu_Id)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Degree)
+            </th>
+            <th>
+                Completion Year
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Institute)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Specialization)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CGPA)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.App_Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PI_Id)
+                </th>*@
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Edu_Id)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Degree)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompletionYear)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Institute)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Specialization)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CGPA)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.App_Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PI_Id)
+                    </td>*@
+                <td>
+                    @Html.ActionLink("Update", "UpdateEducation", new { id = item.Edu_Id }) |
+                    @Html.ActionLink("Remove", "RemoveEducation", new { id = item.Edu_Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+    
+    @*@Html.ActionLink("Next >>", "ExperienceDetail", "UpdateProfile", new object { }, new { @class = "Next-btn" })*@
+
+</div>

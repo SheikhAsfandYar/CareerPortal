@@ -1,0 +1,106 @@
+﻿
+@if (Session["UserType"].ToString() == "Admin")
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="@Url.Action("index", "Home", new { area = "Admin" })"><span class="name"> @Session["UserName"]</span><span class="caret"></span> </a>
+            <ul class="dropdown-menu">
+                <li><a href="@Url.Action("Dashboard", "Home", new { area = "Admin" })">Home</a></li>
+                <li class="divider"></li>
+                <li><a href="@Url.Action("logout", "Home", new { area = "" })">Logout</a></li>
+            </ul>
+
+        </li>
+    </ul>
+}
+else if (Session["UserType"].ToString() == "Hod"|| Session["UserType"].ToString() == "HOD")
+{
+
+    <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="@Url.Action("index", "Home", new { area = "HOD" })"><span class="name"> @Session["UserName"]</span><span class="caret"></span> </a>
+            <ul class="dropdown-menu">
+                <li><a href="@Url.Action("Index", "Home", new { area = "HOD" })">Home</a></li>
+                <li class="divider"></li>
+                <li><a href="@Url.Action("logout", "Home", new { area = "" })">Logout</a></li>
+            </ul>
+
+        </li>
+    </ul>
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="@Url.Action("index", "Home", new { area = "Applicant"})"><span class="name"> @Session["UserName"]</span><span class="caret"></span> </a>
+        <ul class="dropdown-menu">
+            <li><a href="@Url.Action("ProfileView", "Profile", new { area = "Applicant"})">Profile</a></li>
+            <li class="divider"></li>
+            <li><a href="@Url.Action("logout", "Home", new { area = ""})">Logout</a></li>
+        </ul>
+
+        </li>
+    </ul>
+}
+ <style>
+    .navbar-right .dropdown-menu {
+    right: 0;
+    left:0;
+}
+     .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    color: #ffffff;
+    background-color: #19315B;
+}
+     .dropdown-menu {
+         position: absolute;
+         top: 100%;
+         left: 0;
+         z-index: 1000;
+         display: none;
+         float: left;
+         min-width: 135px;
+         padding: 5px 0;
+         margin: 2px 0 0;
+         font-size: 14px;
+         list-style: none;
+         color:#FFFFFF;
+         background-color: #19315b;
+         border: 1px solid #cccccc;
+         border: 1px solid rgba(0, 0, 0, 0.15);
+         border-radius: 4px;
+         -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+         background-clip: padding-box;
+     }
+     .dropdown-menu > li > a {
+    display: block;
+    padding: 3px 20px;
+    color: #ffffff !important;
+    font-weight: 700;
+    font-family: serif;
+    text-transform: uppercase;
+    transition: all ease 0.5s;
+    color: #FFFFFF;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    text-align: center;
+}
+     .name{
+         font-size: 18px;
+    text-transform: capitalize;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: monospace;
+     }
+
+     .nav .caret {
+    margin-top:-4px;
+    border-top-color: #FFFFFF;
+    border-bottom-color: #FFFFFF;
+    transition: all ease 0.5s;
+}
+     .nav a:hover .caret {
+    border-top-color: #B01F24;
+    border-bottom-color: #B01F24;
+}
+ </style>

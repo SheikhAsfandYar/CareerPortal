@@ -1,0 +1,71 @@
+﻿@model HTLCareerPortal.tbl_Resumes
+
+@{
+    ViewBag.Title = "ResumeInfo";
+   
+}
+
+    <div class="container">
+        @Html.Partial("_stepsView")
+        @Html.ActionLink("<< Back", "index", "Home", new object { }, new { @class = "Pre-btn" })
+        @Html.ActionLink("Next >>", "PersonalDetail", "UpdateProfile", new object { }, new { @class = "Next-btn" })
+        <h4 class="step-number">You are at Step <span class="number">1<sup>st</sup></span> out of <span class="number">9</span> !</h4>
+        <h2 class="text-center ">UPDATE YOUR RESUME / CV</h2>
+        <h2 class="cv-heading">Greetings</h2>
+        <p class="resume-tophighlights">We appreciate your interest in Hi-Tech Lubricants Limited.</p>
+        <p class="resume-tophighlights">It is requested to fill spare sometime to fill the necessary information to be able to evaluate you in the best possible manner.</p>
+        <p class="resume-tophighlights">If you apply against the specific job opening, you will be evaluated by our recruitment team against the job post.</p>
+        <p class="resume-tophighlights">Even if you cannot find your preferred job opening, we would like you to fill the information to create your profile in our data base for future openings.</p>
+        <p class="resume-tophighlights">Your profile details will be kept strictly confidential</p>
+        <p class="resume-tophighlights">Wish you best of luck for your future.</p>
+        <p class="resume-tophighlights">Human Resource Department</p>
+        <hr />
+        @using (Html.BeginForm("ResumeInfo", "UpdateProfile", FormMethod.Post,
+                                            new { enctype = "multipart/form-data" }))
+        {   @Html.AntiForgeryToken()
+
+
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @*<div class="form-group">
+                        @Html.HiddenFor(model => model.ResumeId, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.HiddenFor(model => model.ResumeId, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.ResumeId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>*@
+
+                <div class="form-group">
+                    <div class="col-md-12">
+                        @if (ViewBag.Check == "Yes")
+                {
+                            <a href="~/Resumes/@Model.ResumeUrl" download>Your Resume is Already Uploaded.<span class="glyphicon glyphicon-download"></span></a>
+                            @Html.ActionLink("Delete", "DeleteResume", "UpdateProfile", new  { ResId= Model.ResumeId  }, new { @class = "btn-default" })
+                             <p>You Can Also Update Your New Resume </p>
+                        }
+                        @Html.Label("Update Your Latest Resume :", htmlAttributes: new { @class = "control-label Resume-Lable" })
+                        <input type="file" accept="application/msword,text/plain,application/pdf" name="file" id="file" />
+                        @Html.ValidationMessageFor(model => model.ResumeUrl, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.HiddenFor(model => model.AppId, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.HiddenFor(model => model.AppId, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.AppId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <input type="submit" value="Update" class="btn btn-default save-btn" />
+                    </div>
+                </div>
+            </div>
+        }
+
+        @*<div>
+            @Html.ActionLink("Next >>", "PersonalDetail", "UpdateProfile", new object { }, new { @class = "Next-btn" })
+        </div>*@
+    </div>

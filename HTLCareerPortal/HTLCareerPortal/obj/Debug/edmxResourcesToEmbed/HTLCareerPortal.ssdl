@@ -1,0 +1,527 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HTLCareerPortalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="citySetup">
+    <Key>
+      <PropertyRef Name="cityCode" />
+    </Key>
+    <Property Name="cityCode" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="cityName" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="jobApplying">
+    <Key>
+      <PropertyRef Name="pk" />
+    </Key>
+    <Property Name="pk" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobId" Type="int" Nullable="false" />
+    <Property Name="App_Id" Type="int" Nullable="false" />
+    <Property Name="ApplyDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JobSetup">
+    <Key>
+      <PropertyRef Name="pk" />
+    </Key>
+    <Property Name="JobTitle" Type="varchar" MaxLength="200" />
+    <Property Name="TotalPosition" Type="varchar" MaxLength="50" />
+    <Property Name="JobType" Type="varchar" MaxLength="500" />
+    <Property Name="Education" Type="varchar" MaxLength="8000" />
+    <Property Name="Department" Type="int" />
+    <Property Name="JobRequirements" Type="varchar" MaxLength="8000" />
+    <Property Name="SkillsRequired" Type="varchar" MaxLength="8000" />
+    <Property Name="JobOpeningDate" Type="datetime" />
+    <Property Name="JobClosingDate" Type="datetime" />
+    <Property Name="JobStatus" Type="varchar" MaxLength="50" />
+    <Property Name="JobLocation" Type="varchar" MaxLength="5" />
+    <Property Name="ScopeOfResponsibility" Type="varchar" MaxLength="5000" />
+    <Property Name="Experience" Type="varchar" MaxLength="5000" />
+    <Property Name="CompensationBenefits" Type="varchar" MaxLength="5000" />
+    <Property Name="pk" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_AdminToHod">
+    <Key>
+      <PropertyRef Name="ATHid" />
+    </Key>
+    <Property Name="ATHid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepId" Type="int" />
+    <Property Name="JobId" Type="int" />
+    <Property Name="AppId" Type="int" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_CareerObjective">
+    <Key>
+      <PropertyRef Name="CO_Id" />
+    </Key>
+    <Property Name="CO_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CareerObjective" Type="varchar" MaxLength="450" />
+    <Property Name="App_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_Department">
+    <Key>
+      <PropertyRef Name="DepId" />
+    </Key>
+    <Property Name="DepId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepName" Type="varchar" MaxLength="80" />
+    <Property Name="DepHod" Type="char" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_Education">
+    <Key>
+      <PropertyRef Name="Edu_Id" />
+    </Key>
+    <Property Name="Edu_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Degree" Type="varchar" MaxLength="80" />
+    <Property Name="CompletionYear" Type="int" />
+    <Property Name="Institute" Type="varchar" MaxLength="100" />
+    <Property Name="Specialization" Type="varchar" MaxLength="50" />
+    <Property Name="CGPA" Type="nvarchar" MaxLength="10" />
+    <Property Name="App_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_Experience">
+    <Key>
+      <PropertyRef Name="Exp_Id" />
+    </Key>
+    <Property Name="Exp_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobTitle" Type="varchar" MaxLength="50" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="150" />
+    <Property Name="CompanyAddress" Type="nvarchar" MaxLength="150" />
+    <Property Name="Industry" Type="varchar" MaxLength="50" />
+    <Property Name="PhoneNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="JobSpecialization" Type="varchar" MaxLength="250" />
+    <Property Name="App_Id" Type="int" />
+    <Property Name="PI_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_FOI">
+    <Key>
+      <PropertyRef Name="FOI_Id" />
+    </Key>
+    <Property Name="FOI_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FOI_Name" Type="char" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="tbl_GeneralInfo">
+    <Key>
+      <PropertyRef Name="Ans_Id" />
+    </Key>
+    <Property Name="Ans_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ans_One_Status" Type="bit" />
+    <Property Name="Ans_One_Text" Type="char" MaxLength="100" />
+    <Property Name="Ans_Two_Status" Type="bit" />
+    <Property Name="Ans_Two_Text" Type="char" MaxLength="100" />
+    <Property Name="Ans_Three_Status" Type="bit" />
+    <Property Name="Ans_Three_Text" Type="char" MaxLength="100" />
+    <Property Name="App_Id" Type="int" />
+    <Property Name="GeneralStatus" Type="char" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="tbl_Images">
+    <Key>
+      <PropertyRef Name="ImageId" />
+    </Key>
+    <Property Name="ImageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImageUrl" Type="nvarchar" MaxLength="100" />
+    <Property Name="AppId" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_JobSalaryPreference">
+    <Key>
+      <PropertyRef Name="JSP_ID" />
+    </Key>
+    <Property Name="JSP_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PWT1" Type="varchar" MaxLength="50" />
+    <Property Name="PWT2" Type="varchar" MaxLength="50" />
+    <Property Name="PWT3" Type="varchar" MaxLength="50" />
+    <Property Name="FOI1" Type="int" />
+    <Property Name="FOI2" Type="int" />
+    <Property Name="FOI3" Type="int" />
+    <Property Name="CurrentSalary" Type="nvarchar" MaxLength="10" />
+    <Property Name="Benifits" Type="varchar" MaxLength="80" />
+    <Property Name="ExpectedGrossSalary" Type="nvarchar" MaxLength="10" />
+    <Property Name="App_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_PersonalInfo">
+    <Key>
+      <PropertyRef Name="PI_Id" />
+    </Key>
+    <Property Name="PI_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="char" MaxLength="30" />
+    <Property Name="MiddleName" Type="char" MaxLength="30" />
+    <Property Name="LastName" Type="char" MaxLength="30" />
+    <Property Name="Company" Type="nvarchar" MaxLength="70" />
+    <Property Name="CurrentDesignation" Type="varchar" MaxLength="50" />
+    <Property Name="CNIC" Type="nvarchar" MaxLength="50" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="DOB" Type="date" />
+    <Property Name="PlaceOfBirth" Type="varchar" MaxLength="50" />
+    <Property Name="MaritalStatus" Type="varchar" MaxLength="20" />
+    <Property Name="App_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_ProfessionalReference">
+    <Key>
+      <PropertyRef Name="PR_Id" />
+    </Key>
+    <Property Name="PR_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="char" MaxLength="50" />
+    <Property Name="Relationship" Type="char" MaxLength="50" />
+    <Property Name="Designation" Type="varchar" MaxLength="50" />
+    <Property Name="Organization" Type="varchar" MaxLength="100" />
+    <Property Name="ContactNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="App_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_Resumes">
+    <Key>
+      <PropertyRef Name="ResumeId" />
+    </Key>
+    <Property Name="ResumeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ResumeUrl" Type="nvarchar" MaxLength="100" />
+    <Property Name="AppId" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_SignUp">
+    <Key>
+      <PropertyRef Name="ApplicantId" />
+    </Key>
+    <Property Name="ApplicantId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="char" MaxLength="50" Nullable="false" />
+    <Property Name="FatherName" Type="char" MaxLength="50" Nullable="false" />
+    <Property Name="Gender" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="City" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="EmailID" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="CellNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserType" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Dep_Id" Type="int" />
+  </EntityType>
+  <Association Name="FK__jobApplyi__App_I__7E02B4CC">
+    <End Role="tbl_SignUp" Type="Self.tbl_SignUp" Multiplicity="1" />
+    <End Role="jobApplying" Type="Self.jobApplying" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SignUp">
+        <PropertyRef Name="ApplicantId" />
+      </Principal>
+      <Dependent Role="jobApplying">
+        <PropertyRef Name="App_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__jobApplyi__JobId__2EDAF651">
+    <End Role="JobSetup" Type="Self.JobSetup" Multiplicity="1" />
+    <End Role="jobApplying" Type="Self.jobApplying" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobSetup">
+        <PropertyRef Name="pk" />
+      </Principal>
+      <Dependent Role="jobApplying">
+        <PropertyRef Name="JobId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__JobSetup__Depart__6DCC4D03">
+    <End Role="tbl_Department" Type="Self.tbl_Department" Multiplicity="0..1" />
+    <End Role="JobSetup" Type="Self.JobSetup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Department">
+        <PropertyRef Name="DepId" />
+      </Principal>
+      <Dependent Role="JobSetup">
+        <PropertyRef Name="Department" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__JobSetup__JobLoc__32AB8735">
+    <End Role="citySetup" Type="Self.citySetup" Multiplicity="0..1" />
+    <End Role="JobSetup" Type="Self.JobSetup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="citySetup">
+        <PropertyRef Name="cityCode" />
+      </Principal>
+      <Dependent Role="JobSetup">
+        <PropertyRef Name="JobLocation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Admin__AppId__03BB8E22">
+    <End Role="tbl_SignUp" Type="Self.tbl_SignUp" Multiplicity="0..1" />
+    <End Role="tbl_AdminToHod" Type="Self.tbl_AdminToHod" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SignUp">
+        <PropertyRef Name="ApplicantId" />
+      </Principal>
+      <Dependent Role="tbl_AdminToHod">
+        <PropertyRef Name="AppId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Admin__DepId__02C769E9">
+    <End Role="tbl_Department" Type="Self.tbl_Department" Multiplicity="0..1" />
+    <End Role="tbl_AdminToHod" Type="Self.tbl_AdminToHod" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Department">
+        <PropertyRef Name="DepId" />
+      </Principal>
+      <Dependent Role="tbl_AdminToHod">
+        <PropertyRef Name="DepId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Admin__JobId__04AFB25B">
+    <End Role="JobSetup" Type="Self.JobSetup" Multiplicity="0..1" />
+    <End Role="tbl_AdminToHod" Type="Self.tbl_AdminToHod" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobSetup">
+        <PropertyRef Name="pk" />
+      </Principal>
+      <Dependent Role="tbl_AdminToHod">
+        <PropertyRef Name="JobId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Caree__App_I__151B244E">
+    <End Role="tbl_SignUp" Type="Self.tbl_SignUp" Multiplicity="0..1" />
+    <End Role="tbl_CareerObjective" Type="Self.tbl_CareerObjective" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SignUp">
+        <PropertyRef Name="ApplicantId" />
+      </Principal>
+      <Dependent Role="tbl_CareerObjective">
+        <PropertyRef Name="App_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Educa__App_I__398D8EEE">
+    <End Role="tbl_SignUp" Type="Self.tbl_SignUp" Multiplicity="0..1" />
+    <End Role="tbl_Education" Type="Self.tbl_Education" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SignUp">
+        <PropertyRef Name="ApplicantId" />
+      </Principal>
+      <Dependent Role="tbl_Education">
+        <PropertyRef Name="App_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Exper__App_I__571DF1D5">
+    <End Role="tbl_SignUp" Type="Self.tbl_SignUp" Multiplicity="0..1" />
+    <End Role="tbl_Experience" Type="Self.tbl_Experience" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SignUp">
+        <PropertyRef Name="ApplicantId" />
+      </Principal>
+      <Dependent Role="tbl_Experience">
+        <PropertyRef Name="App_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Exper__PI_Id__1AD3FDA4">
+    <End Role="tbl_PersonalInfo" Type="Self.tbl_PersonalInfo" Multiplicity="0..1" />
+    <End Role="tbl_Experience" Type="Self.tbl_Experience" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_PersonalInfo">
+        <PropertyRef Name="PI_Id" />
+      </Principal>
+      <Dependent Role="tbl_Experience">
+        <PropertyRef Name="PI_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Gener__App_I__08B54D69">
+    <End Role="tbl_SignUp" Type="Self.tbl_SignUp" Multiplicity="0..1" />
+    <End Role="tbl_GeneralInfo" Type="Self.tbl_GeneralInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SignUp">
+        <PropertyRef Name="ApplicantId" />
+      </Principal>
+      <Dependent Role="tbl_GeneralInfo">
+        <PropertyRef Name="App_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Image__AppId__123EB7A3">
+    <End Role="tbl_SignUp" Type="Self.tbl_SignUp" Multiplicity="0..1" />
+    <End Role="tbl_Images" Type="Self.tbl_Images" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SignUp">
+        <PropertyRef Name="ApplicantId" />
+      </Principal>
+      <Dependent Role="tbl_Images">
+        <PropertyRef Name="AppId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_JobSa__App_I__00200768">
+    <End Role="tbl_SignUp" Type="Self.tbl_SignUp" Multiplicity="0..1" />
+    <End Role="tbl_JobSalaryPreference" Type="Self.tbl_JobSalaryPreference" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SignUp">
+        <PropertyRef Name="ApplicantId" />
+      </Principal>
+      <Dependent Role="tbl_JobSalaryPreference">
+        <PropertyRef Name="App_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_JobSal__FOI1__7C4F7684">
+    <End Role="tbl_FOI" Type="Self.tbl_FOI" Multiplicity="0..1" />
+    <End Role="tbl_JobSalaryPreference" Type="Self.tbl_JobSalaryPreference" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_FOI">
+        <PropertyRef Name="FOI_Id" />
+      </Principal>
+      <Dependent Role="tbl_JobSalaryPreference">
+        <PropertyRef Name="FOI1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_JobSal__FOI2__7D439ABD">
+    <End Role="tbl_FOI" Type="Self.tbl_FOI" Multiplicity="0..1" />
+    <End Role="tbl_JobSalaryPreference" Type="Self.tbl_JobSalaryPreference" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_FOI">
+        <PropertyRef Name="FOI_Id" />
+      </Principal>
+      <Dependent Role="tbl_JobSalaryPreference">
+        <PropertyRef Name="FOI2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_JobSal__FOI3__7E37BEF6">
+    <End Role="tbl_FOI" Type="Self.tbl_FOI" Multiplicity="0..1" />
+    <End Role="tbl_JobSalaryPreference" Type="Self.tbl_JobSalaryPreference" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_FOI">
+        <PropertyRef Name="FOI_Id" />
+      </Principal>
+      <Dependent Role="tbl_JobSalaryPreference">
+        <PropertyRef Name="FOI3" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Perso__App_I__7D0E9093">
+    <End Role="tbl_SignUp" Type="Self.tbl_SignUp" Multiplicity="0..1" />
+    <End Role="tbl_PersonalInfo" Type="Self.tbl_PersonalInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SignUp">
+        <PropertyRef Name="ApplicantId" />
+      </Principal>
+      <Dependent Role="tbl_PersonalInfo">
+        <PropertyRef Name="App_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Profe__App_I__73BA3083">
+    <End Role="tbl_SignUp" Type="Self.tbl_SignUp" Multiplicity="0..1" />
+    <End Role="tbl_ProfessionalReference" Type="Self.tbl_ProfessionalReference" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SignUp">
+        <PropertyRef Name="ApplicantId" />
+      </Principal>
+      <Dependent Role="tbl_ProfessionalReference">
+        <PropertyRef Name="App_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tbl_Resum__AppId__114A936A">
+    <End Role="tbl_SignUp" Type="Self.tbl_SignUp" Multiplicity="0..1" />
+    <End Role="tbl_Resumes" Type="Self.tbl_Resumes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_SignUp">
+        <PropertyRef Name="ApplicantId" />
+      </Principal>
+      <Dependent Role="tbl_Resumes">
+        <PropertyRef Name="AppId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HTLCareerPortalModelStoreContainer">
+    <EntitySet Name="citySetup" EntityType="Self.citySetup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="jobApplying" EntityType="Self.jobApplying" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JobSetup" EntityType="Self.JobSetup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_AdminToHod" EntityType="Self.tbl_AdminToHod" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_CareerObjective" EntityType="Self.tbl_CareerObjective" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Department" EntityType="Self.tbl_Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Education" EntityType="Self.tbl_Education" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Experience" EntityType="Self.tbl_Experience" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_FOI" EntityType="Self.tbl_FOI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_GeneralInfo" EntityType="Self.tbl_GeneralInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Images" EntityType="Self.tbl_Images" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_JobSalaryPreference" EntityType="Self.tbl_JobSalaryPreference" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_PersonalInfo" EntityType="Self.tbl_PersonalInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ProfessionalReference" EntityType="Self.tbl_ProfessionalReference" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Resumes" EntityType="Self.tbl_Resumes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_SignUp" EntityType="Self.tbl_SignUp" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__jobApplyi__App_I__7E02B4CC" Association="Self.FK__jobApplyi__App_I__7E02B4CC">
+      <End Role="tbl_SignUp" EntitySet="tbl_SignUp" />
+      <End Role="jobApplying" EntitySet="jobApplying" />
+    </AssociationSet>
+    <AssociationSet Name="FK__jobApplyi__JobId__2EDAF651" Association="Self.FK__jobApplyi__JobId__2EDAF651">
+      <End Role="JobSetup" EntitySet="JobSetup" />
+      <End Role="jobApplying" EntitySet="jobApplying" />
+    </AssociationSet>
+    <AssociationSet Name="FK__JobSetup__Depart__6DCC4D03" Association="Self.FK__JobSetup__Depart__6DCC4D03">
+      <End Role="tbl_Department" EntitySet="tbl_Department" />
+      <End Role="JobSetup" EntitySet="JobSetup" />
+    </AssociationSet>
+    <AssociationSet Name="FK__JobSetup__JobLoc__32AB8735" Association="Self.FK__JobSetup__JobLoc__32AB8735">
+      <End Role="citySetup" EntitySet="citySetup" />
+      <End Role="JobSetup" EntitySet="JobSetup" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Admin__AppId__03BB8E22" Association="Self.FK__tbl_Admin__AppId__03BB8E22">
+      <End Role="tbl_SignUp" EntitySet="tbl_SignUp" />
+      <End Role="tbl_AdminToHod" EntitySet="tbl_AdminToHod" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Admin__DepId__02C769E9" Association="Self.FK__tbl_Admin__DepId__02C769E9">
+      <End Role="tbl_Department" EntitySet="tbl_Department" />
+      <End Role="tbl_AdminToHod" EntitySet="tbl_AdminToHod" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Admin__JobId__04AFB25B" Association="Self.FK__tbl_Admin__JobId__04AFB25B">
+      <End Role="JobSetup" EntitySet="JobSetup" />
+      <End Role="tbl_AdminToHod" EntitySet="tbl_AdminToHod" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Caree__App_I__151B244E" Association="Self.FK__tbl_Caree__App_I__151B244E">
+      <End Role="tbl_SignUp" EntitySet="tbl_SignUp" />
+      <End Role="tbl_CareerObjective" EntitySet="tbl_CareerObjective" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Educa__App_I__398D8EEE" Association="Self.FK__tbl_Educa__App_I__398D8EEE">
+      <End Role="tbl_SignUp" EntitySet="tbl_SignUp" />
+      <End Role="tbl_Education" EntitySet="tbl_Education" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Exper__App_I__571DF1D5" Association="Self.FK__tbl_Exper__App_I__571DF1D5">
+      <End Role="tbl_SignUp" EntitySet="tbl_SignUp" />
+      <End Role="tbl_Experience" EntitySet="tbl_Experience" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Exper__PI_Id__1AD3FDA4" Association="Self.FK__tbl_Exper__PI_Id__1AD3FDA4">
+      <End Role="tbl_PersonalInfo" EntitySet="tbl_PersonalInfo" />
+      <End Role="tbl_Experience" EntitySet="tbl_Experience" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Gener__App_I__08B54D69" Association="Self.FK__tbl_Gener__App_I__08B54D69">
+      <End Role="tbl_SignUp" EntitySet="tbl_SignUp" />
+      <End Role="tbl_GeneralInfo" EntitySet="tbl_GeneralInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Image__AppId__123EB7A3" Association="Self.FK__tbl_Image__AppId__123EB7A3">
+      <End Role="tbl_SignUp" EntitySet="tbl_SignUp" />
+      <End Role="tbl_Images" EntitySet="tbl_Images" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_JobSa__App_I__00200768" Association="Self.FK__tbl_JobSa__App_I__00200768">
+      <End Role="tbl_SignUp" EntitySet="tbl_SignUp" />
+      <End Role="tbl_JobSalaryPreference" EntitySet="tbl_JobSalaryPreference" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_JobSal__FOI1__7C4F7684" Association="Self.FK__tbl_JobSal__FOI1__7C4F7684">
+      <End Role="tbl_FOI" EntitySet="tbl_FOI" />
+      <End Role="tbl_JobSalaryPreference" EntitySet="tbl_JobSalaryPreference" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_JobSal__FOI2__7D439ABD" Association="Self.FK__tbl_JobSal__FOI2__7D439ABD">
+      <End Role="tbl_FOI" EntitySet="tbl_FOI" />
+      <End Role="tbl_JobSalaryPreference" EntitySet="tbl_JobSalaryPreference" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_JobSal__FOI3__7E37BEF6" Association="Self.FK__tbl_JobSal__FOI3__7E37BEF6">
+      <End Role="tbl_FOI" EntitySet="tbl_FOI" />
+      <End Role="tbl_JobSalaryPreference" EntitySet="tbl_JobSalaryPreference" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Perso__App_I__7D0E9093" Association="Self.FK__tbl_Perso__App_I__7D0E9093">
+      <End Role="tbl_SignUp" EntitySet="tbl_SignUp" />
+      <End Role="tbl_PersonalInfo" EntitySet="tbl_PersonalInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Profe__App_I__73BA3083" Association="Self.FK__tbl_Profe__App_I__73BA3083">
+      <End Role="tbl_SignUp" EntitySet="tbl_SignUp" />
+      <End Role="tbl_ProfessionalReference" EntitySet="tbl_ProfessionalReference" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tbl_Resum__AppId__114A936A" Association="Self.FK__tbl_Resum__AppId__114A936A">
+      <End Role="tbl_SignUp" EntitySet="tbl_SignUp" />
+      <End Role="tbl_Resumes" EntitySet="tbl_Resumes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

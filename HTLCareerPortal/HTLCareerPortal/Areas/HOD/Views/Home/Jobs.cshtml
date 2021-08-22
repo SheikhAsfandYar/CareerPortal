@@ -1,0 +1,68 @@
+﻿@model IEnumerable<HTLCareerPortal.JobSetup>
+<h2 class="text-center text-danger main-heading">JOBS LIST OF YOUR DEPARTMENT... !</h2>
+<p>
+    @Html.ActionLink("ADD NEW", "AddJob", new {area ="HOD"  }, new { @class = "btn btn-sm btn-primary " })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            JOB TITLE
+        </th>
+        <th>
+           TYPE
+        </th>
+        <th>
+          OPENING DATE
+        </th>
+        <th>
+           CLOSING DATE
+        </th>
+        <th>
+            STATUS
+        </th>
+        <th>
+            LOCATION
+        </th>
+        <th>
+            UPDATE 
+        </th>
+        <th>
+              DETAIL
+        </th>
+        <th>
+               REMOVE
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobType)
+        </td>
+        <td>
+            @Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.JobOpeningDate))
+        </td>
+        <td>
+            @Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.JobClosingDate))
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.citySetup.cityName)
+        </td>
+        <td>
+            @Html.ActionLink("UPDATE", "UpdateJob", new { id=item.pk }, new { @class = "btn btn-sm btn-default" }) 
+        </td>
+          <td>
+            @Html.ActionLink("DETAIL", "DetailJob", new { id = item.pk }, new { @class = "btn btn-sm btn-info" })
+          </td>
+             <td>   @Html.ActionLink("REMOVE", "RemoveJob", new { id = item.pk }, new { @class="btn btn-sm btn-danger"})
+        </td>
+    </tr>
+}
+
+</table>

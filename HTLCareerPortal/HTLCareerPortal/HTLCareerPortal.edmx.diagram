@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ff8cbc3e64504ad982c79362c47f113a" Name="Diagram1">
+        <EntityTypeShape EntityType="HTLCareerPortalModel.citySetup" Width="1.5" PointX="5.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HTLCareerPortalModel.jobApplying" Width="1.5" PointX="10.25" PointY="3.625" />
+        <EntityTypeShape EntityType="HTLCareerPortalModel.JobSetup" Width="1.5" PointX="8" PointY="2.375" />
+        <EntityTypeShape EntityType="HTLCareerPortalModel.tbl_CareerObjective" Width="1.5" PointX="3" PointY="15.125" />
+        <EntityTypeShape EntityType="HTLCareerPortalModel.tbl_Department" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HTLCareerPortalModel.tbl_Experience" Width="1.5" PointX="6" PointY="14.125" />
+        <EntityTypeShape EntityType="HTLCareerPortalModel.tbl_FOI" Width="1.5" PointX="3.75" PointY="17.625" />
+        <EntityTypeShape EntityType="HTLCareerPortalModel.tbl_GeneralInfo" Width="1.5" PointX="3" PointY="21" />
+        <EntityTypeShape EntityType="HTLCareerPortalModel.tbl_Images" Width="1.5" PointX="3" PointY="31.625" />
+        <EntityTypeShape EntityType="HTLCareerPortalModel.tbl_PersonalInfo" Width="1.5" PointX="3.75" PointY="3.875" />
+        <EntityTypeShape EntityType="HTLCareerPortalModel.tbl_ProfessionalReference" Width="1.5" PointX="3" PointY="28.375" />
+        <EntityTypeShape EntityType="HTLCareerPortalModel.tbl_Resumes" Width="1.5" PointX="3" PointY="9" />
+        <AssociationConnector Association="HTLCareerPortalModel.FK__JobSetup__JobLoc__32AB8735" />
+        <AssociationConnector Association="HTLCareerPortalModel.FK__jobApplyi__JobId__2EDAF651" />
+        <AssociationConnector Association="HTLCareerPortalModel.FK__JobSetup__Depart__6DCC4D03" />
+        <AssociationConnector Association="HTLCareerPortalModel.FK__tbl_Exper__PI_Id__1AD3FDA4" />
+        <EntityTypeShape EntityType="HTLCareerPortalModel.tbl_Education" Width="1.5" PointX="3" PointY="11.625" />
+        <EntityTypeShape EntityType="HTLCareerPortalModel.tbl_JobSalaryPreference" Width="1.5" PointX="9" PointY="14.625" />
+        <AssociationConnector Association="HTLCareerPortalModel.FK__tbl_JobSal__FOI1__7C4F7684" />
+        <AssociationConnector Association="HTLCareerPortalModel.FK__tbl_JobSal__FOI2__7D439ABD" />
+        <AssociationConnector Association="HTLCareerPortalModel.FK__tbl_JobSal__FOI3__7E37BEF6" />
+        <EntityTypeShape EntityType="HTLCareerPortalModel.tbl_AdminToHod" Width="1.5" PointX="10.25" PointY="8.25" />
+        <AssociationConnector Association="HTLCareerPortalModel.FK__tbl_Admin__JobId__04AFB25B" />
+        <AssociationConnector Association="HTLCareerPortalModel.FK__tbl_Admin__DepId__02C769E9" />
+        <EntityTypeShape EntityType="HTLCareerPortalModel.tbl_SignUp" Width="1.5" PointX="0.75" PointY="16" />
+        <AssociationConnector Association="HTLCareerPortalModel.FK__jobApplyi__App_I__7E02B4CC" />
+        <AssociationConnector Association="HTLCareerPortalModel.FK__tbl_Admin__AppId__03BB8E22" />
+        <AssociationConnector Association="HTLCareerPortalModel.FK__tbl_Caree__App_I__151B244E" />
+        <AssociationConnector Association="HTLCareerPortalModel.FK__tbl_Educa__App_I__398D8EEE" />
+        <AssociationConnector Association="HTLCareerPortalModel.FK__tbl_Exper__App_I__571DF1D5" />
+        <AssociationConnector Association="HTLCareerPortalModel.FK__tbl_Gener__App_I__08B54D69" />
+        <AssociationConnector Association="HTLCareerPortalModel.FK__tbl_Image__AppId__123EB7A3" />
+        <AssociationConnector Association="HTLCareerPortalModel.FK__tbl_JobSa__App_I__00200768" />
+        <AssociationConnector Association="HTLCareerPortalModel.FK__tbl_Perso__App_I__7D0E9093" />
+        <AssociationConnector Association="HTLCareerPortalModel.FK__tbl_Profe__App_I__73BA3083" />
+        <AssociationConnector Association="HTLCareerPortalModel.FK__tbl_Resum__AppId__114A936A" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

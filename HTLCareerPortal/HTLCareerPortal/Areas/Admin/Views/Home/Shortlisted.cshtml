@@ -1,0 +1,56 @@
+﻿@model IEnumerable<HTLCareerPortal.tbl_AdminToHod>
+<h2 class="text-center text-danger main-heading"> LIST OF ALL SHORTLISTED APPLICANTS BY HOD'S</h2>
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+
+            <th>
+              DEPARTMENT NAME
+            </th>
+            <th>
+               SHORTLISTED BY
+            </th>
+            <th>
+              JOB TITLE
+            </th>
+            <th>
+             NAME
+            </th>
+            <th>EMAIL ID</th>
+            <th>SEND EMAIL </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.ATHid)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.tbl_Department.DepName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tbl_Department.DepHod)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JobSetup.JobTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tbl_SignUp.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tbl_SignUp.EmailID)
+                </td>
+                <td>
+                    @Html.ActionLink("SEND EMAIL", "Shortlisted", new {  id=item.ATHid }, new { @class="btn btn-sm btn-default btn-success"}) 
+                </td>
+                @*<td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>*@
+            </tr>
+        }
+
+    </table>
+</div>

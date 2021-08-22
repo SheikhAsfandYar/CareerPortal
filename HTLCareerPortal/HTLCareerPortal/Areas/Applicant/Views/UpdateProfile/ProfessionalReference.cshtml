@@ -1,0 +1,80 @@
+﻿@model IEnumerable<HTLCareerPortal.tbl_ProfessionalReference>
+
+@{
+    ViewBag.Title = "ProfessionalReference";
+  
+}
+<div class="container">
+    @Html.Partial("_stepsView")
+    @Html.ActionLink("<< Back", "JobSalaryPreference", "UpdateProfile", new object { }, new { @class = "Pre-btn" })
+    @Html.ActionLink("Next >>", "GeneralInfo", "UpdateProfile", new object { }, new { @class = "Next-btn" })
+
+    <h4 class="step-number">You are at Step <span class="number">7<sup>th</sup></span> out of <span class="number">9</span> !</h4>
+    <h2 class="text-center">UPDATE YOUR PROFESSIONAL REFERENCE</h2>
+
+    <p>
+        @Html.ActionLink("Add New", "AddPR")
+    </p>
+    <table class="table">
+        <tr>
+            @*<th>
+                    @Html.HiddenFor(model => model.PR_Id)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Relationship)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Designation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Organization)
+            </th>
+            <th>
+                Contact No
+            </th>
+            @*<th>
+                    @Html.HiddenFor(model => model.App_Id)
+                </th>*@
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td>
+                        @Html.HiddenFor(modelItem => item.PR_Id)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Relationship)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Designation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Organization)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ContactNo)
+                </td>
+                @*<td>
+                        @Html.HiddenFor(modelItem => item.App_Id)
+                    </td>*@
+                <td>
+                    @Html.ActionLink("Update", "UpdatePR", new { id = item.PR_Id }) |
+                    @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+                    @Html.ActionLink("Remove", "RemovePR", new { id = item.PR_Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+    @*@Html.ActionLink("Next >>", "GeneralInfo", "UpdateProfile", new object { }, new { @class = "Next-btn" })*@
+   
+
+</div>

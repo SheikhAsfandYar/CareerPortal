@@ -1,0 +1,16 @@
+﻿body {
+}
+.Applicant-Section-Menu-Box{
+height:50px;
+font-weight: bold;
+font-size:20px;
+}
+.Applicant-link {
+color: black;
+font-family:'Adobe Fan Heiti Std';
+text-transform:uppercase;
+}
+.Applicant-link:hover {
+    text-decoration:none;
+    color:black;
+    }

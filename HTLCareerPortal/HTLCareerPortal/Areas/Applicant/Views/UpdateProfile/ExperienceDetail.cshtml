@@ -1,0 +1,92 @@
+﻿@model IEnumerable<HTLCareerPortal.tbl_Experience>
+
+@{
+    ViewBag.Title = "ExperienceDetail";
+   
+}
+<div class="container">
+    @Html.Partial("_stepsView")
+    @Html.ActionLink("<< Back", "EducationDetail", "UpdateProfile", new object { }, new { @class = "Pre-btn" })
+    @Html.ActionLink("Next >>", "JobSalaryPreference", "UpdateProfile", new object { }, new { @class = "Next-btn" })
+    <h4 class="step-number">You are at Step <span class="number">5<sup>th</sup></span> out of <span class="number">9</span> !</h4>
+
+    <h2 class="text-center">UPDATE YOUR JOB EXPERIENCES</h2>
+
+    <p>
+        @Html.ActionLink("Add Experience", "AddExperience")
+    </p>
+    <table class="table">
+        <tr>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Exp_Id)
+                </th>*@
+            <th>
+               Job Title
+            </th>
+            <th>
+               Company Name
+            </th>
+            <th>
+               Company Address
+            </th>
+            <th>
+                Industry
+            </th>
+            <th>
+               PhoneNo
+            </th>
+            <th>
+               Job Specialization
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.App_Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PI_Id)
+                </th>*@
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Exp_Id)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.JobTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompanyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompanyAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Industry)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JobSpecialization)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.App_Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PI_Id)
+                    </td>*@
+                <td>
+                    @Html.ActionLink("Update", "UpdateExperience", new { id = item.Exp_Id }) |
+                    @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+                    @Html.ActionLink("Remove", "RemoveExperience", new { id = item.Exp_Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+    
+    @*@Html.ActionLink("Next >>", "JobSalaryPreference", "UpdateProfile", new object { }, new { @class = "Next-btn" })*@
+
+</div>

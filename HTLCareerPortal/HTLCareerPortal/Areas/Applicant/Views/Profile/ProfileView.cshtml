@@ -1,0 +1,151 @@
+﻿
+@{
+    ViewBag.Title = "ProfileView";
+}
+<link href="~/Content/dashboard.css" rel="stylesheet" />
+<div class="container">
+    <section class="Profile-header-section ">
+
+        <div class="statistics-box Heading-box1 ">
+            <div class="statistics-item">
+                
+                    <div class="image-box">
+                   
+                </div>
+            </div>
+            <div class="statistics-item">
+                
+                    <div class="Header-Text">
+                    </div>
+               
+            </div>
+        </div>
+</section>
+    <section  class="Profile-Objective-Section Profile-back-Section">
+        <div class="col-md-12">
+            <div class="Objective-Box">
+                <h3 class="Profile-Headings">Career Objective</h3>
+                <div class="objective-detail">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="Profile-Experience-Section Profile-back-Section">
+        <div class="col-md-12">
+            <h3 class="Profile-Headings">Work Experience</h3>
+            <div class="Experience-Table table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>
+                                Job Title
+                            </th>
+                            <th>
+                                Industry
+                            </th>
+                            <th>
+                                Job Specialization
+                            </th>
+                            <th>
+                                Company Name
+                            </th>
+                            <th>
+                                Phone#
+                            </th>
+                            <th>
+                                Company Address
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="tbody"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <section data-aos="fade-up" class="Profile-Education-Section Profile-back-Section">
+        <div class="col-md-12">
+            <h3 class="Profile-Headings">Education Detail</h3>
+            <div class="Education-Table table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>
+                                Degree Title
+                            </th>
+                            <th>
+                                Year
+                            </th>
+                            <th>
+                                Institute Name
+                            </th>
+                            <th>
+                                Specialization
+                            </th>
+                            <th>
+                                CGPA / %
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="Edu-tbody"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <section data-aos="fade-left" class="JobSalary-Section Profile-back-Section">
+        <div class="col-md-12">
+            <h3 class="Profile-Headings">Job &amp; Salary Preference</h3>
+            <div class="JobSalary-Detail">
+
+            </div>
+        </div>
+    </section>
+    <section data-aos="fade-right" class="Professional-Reference-Section Profile-back-Section">
+        <div class="col-md-12">
+            <h3 class="Profile-Headings">Professional References</h3>
+            <div class="PR-Table table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Relationship
+                            </th>
+                            <th>
+                                Designation
+                            </th>
+                            <th>
+                                Organization
+                            </th>
+                            <th>
+                                Contact#
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="PR-tbody"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <section data-aos="fade-left" class="Personal-Detail-Section Profile-back-Section">
+        <div class="col-md-12">
+            <h3 class="Profile-Headings">Personal Detail</h3>
+            <div class="Personal-Detail">
+
+            </div>
+        </div>
+    </section>
+    <div class="loader">
+   <h3>Your Profile is Loading ...</h3>
+    </div>
+    </div>
+    @section Scripts
+{
+            <script type="text/javascript">
+                $(window).load(function() {
+                $(".loader").fadeOut(4500);
+});
+</script>
+        <script src="@Url.Content("~/Scripts/ProfileView.js")"></script>
+    }

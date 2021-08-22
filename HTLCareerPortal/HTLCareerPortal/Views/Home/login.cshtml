@@ -1,0 +1,53 @@
+﻿@model HTLCareerPortal.tbl_SignUp
+@using HTLCareerPortal.Models
+@{
+    ViewBag.Title = "login";
+    Layout = "~/Views/Shared/_signup-login.cshtml";
+}
+
+<section class="sign-in">
+    <div class="container">
+        <div class="signin-content">
+            <div class="signin-image">
+                <figure><img src="~/images/signin-image.jpg" alt="sing up image"></figure>
+                <a href="@Url.Action("SignUp", "Home")" class="signup-image-link">Create an account</a>
+            </div>
+
+            <div class="signin-form">
+                <h2 class="form-title">Sign In</h2>
+                @using (Html.BeginForm("login", "Home", FormMethod.Post))
+                {
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        <label for="email"><i class="zmdi zmdi-email"></i></label>
+                        @Html.EditorFor(model => model.EmailID, new { htmlAttributes = new { @class = "input", placeholder = "Email" } })
+                        @Html.ValidationMessageFor(model => model.EmailID, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label for="password"><i class="zmdi zmdi-lock"></i></label>
+                        @Html.TextBoxFor(model => model.Password, new { @class = "input", placeholder = "Password",@type ="Password" })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group  ">
+                        @Html.CheckBox("Remember", true, new {  @class= "agree-term checkbox checkbox-inline" })
+                        <label for="remember-me" class="label-agree-term">Remember me</label>
+                    </div>
+                    <div class="form-group">
+                        <div class="">
+                            <input type="submit" value="Log In" class="btn btn-default form-submit" />
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+    //function preventBack() { window.history.forward(1); }
+    //setTimeout("preventBack()", 0);
+    //window.onload = function () { null};
+    history.pushState(null, null, location.href);
+    window.onpopstate = function () {
+        history.go(1);
+    };
+</script>

@@ -1,0 +1,68 @@
+﻿@model IEnumerable<HTLCareerPortal.JobSetup>
+
+@{
+    ViewBag.Title = "jobs";
+}
+
+<h2 class="text-center main-heading">LIST OF ALL JOBS </h2>
+
+<h3 class="text-center">
+    @Html.ActionLink("ADD NEW JOB", "AddJob")
+
+</h3>
+<hr />
+@using (Html.BeginForm())
+{
+<div class="form-group second-row">
+    @Html.DropDownList("Status", new SelectList(new[] { new SelectListItem { Value = "All", Text = "JOB STATUS" }, new SelectListItem { Value = "ACTIVE", Text = "ACTIVE" }, new SelectListItem { Value = "INACTIVE", Text = "INACTIVE" }, }, "Value", "Text"), new { @class = "form-control searching" })
+
+    @Html.TextBox("search", "", new { @class = "form-control searching1",@placeholder="Job Title" })
+    <input type="submit" name="submit" value="Search" class=" btn btn-default  btn-danger ">
+</div>
+}
+<table class="table text-left">
+    <tr  class="text-danger">
+        <th>
+          JOB TITLE
+        </th>
+        <th>
+          JOB TYPE
+        </th>
+        <th>
+           DEPARTMENT
+        </th>
+        <th>
+          JOB STATUS
+        </th>
+        <th>
+           JOB LOCATION
+        </th>
+        <th>UPDATE | REMOVE</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobTitle)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.JobType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_Department.DepName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.citySetup.cityName)
+        </td>
+        <td>
+            @Html.ActionLink(" Update  ", "UpdateJob", new {  id=item.pk }, new { @class = "btn btn-sm btn-default" }) 
+            @Html.ActionLink("  Remove", "RemoveJob", new { id=item.pk }, new { @class = "btn btn-sm btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

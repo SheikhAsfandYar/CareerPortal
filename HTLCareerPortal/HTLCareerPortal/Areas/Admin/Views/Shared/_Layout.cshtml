@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    @if (Session["UserType"].ToString() == "HOD" || Session["UserType"].ToString() == "Hod")
+    {
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li> @Html.ActionLink("APPLICANTS RECIEVED", "Index", new { area = "HOD", Controller = "Home" })</li>
+                        <li>@Html.ActionLink("JOBS", "Jobs", new { area = "HOD", Controller = "Home" })</li>
+                        <li>@Html.ActionLink("Forwarded To Admin", "SentToAdmin", new { area = "HOD", Controller = "Home" })</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </div>
+    }
+    else if(Session["UserType"].ToString() == "Admin" || Session["UserType"].ToString() == "ADMIN") { 
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("DASHBOARD", "Dashboard", "Home", new { area = "Admin" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("FIND NOW", "Index", new { area = "Admin", Controller = "Home" })</li>
+                    <li>@Html.ActionLink("Update JOBS", "Jobs", new { area = "Admin", Controller = "Jobs" })</li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="@Url.Action("Applicants", "Home", new { area = "Admin" })"> Applicants List<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+
+                            <li><a href="@Url.Action("Applicants", "Home", new { area = "Admin"})">All Applicants</a></li>
+                            <li class="divider"></li>
+                            <li><a href="@Url.Action("Shortlisted", "Home", new { area = "Admin"})">Shortlisted</a></li>
+                            <li class="divider"></li>
+                            <li><a href="@Url.Action("Rejected", "Home", new { area = "Admin"})">Rejected</a></li>
+                        </ul>
+                    </li>
+                     <li> @Html.ActionLink("Forwarded To Hod's", "AdminToHod", new { area = "Admin", Controller = "Home" })</li>
+                    <li> @Html.ActionLink("Department Setup", "DepartmentList", new { area = "Admin", Controller = "Home" })</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    }
+    <div class="container body-content">
+        @RenderBody()
+        </div>
+    <footer class="htl-career-footer">
+            <div class="container">
+                <p>&copy; @DateTime.Now.Year - All Rights Reserved By <span>HI-TECH LUBRICANTS OIL LIMITED</span></p>
+            </div>
+
+        </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/sendtoHod.js"></script>
+</body>
+</html>
+
+<style>
+    .navbar-nav .dropdown-menu {
+        right: 0;
+        left: 0;
+    }
+
+    .navbar-nav > .open > a, .navbar-nav > .open > a:hover,  .navbar-nav > .open > a:focus {
+        color: #ffffff;
+        background-color: #19315B;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        display: none;
+        float: left;
+        min-width: 135px;
+        padding: 5px 0;
+        margin: 2px 0 0;
+        font-size: 14px;
+        list-style: none;
+        color: #FFFFFF;
+        background-color: #19315b;
+        border: 1px solid #cccccc;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
+        -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+        background-clip: padding-box;
+    }
+
+        .dropdown-menu > li > a {
+            display: block;
+            padding: 3px 20px;
+            color: #ffffff !important;
+            font-weight: 700;
+            font-family: serif;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            white-space: nowrap;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+    .name {
+        font-size: 18px;
+        text-transform: capitalize;
+        font-weight: 900;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-family: monospace;
+    }
+
+    .nav .caret {
+        margin-top: -4px;
+        border-top-color: #FFFFFF;
+        border-bottom-color: #FFFFFF;
+        margin-left:10px;
+    }
+
+    .nav a:hover .caret {
+        border-top-color: #B01F24;
+        border-bottom-color: #B01F24;
+    }
+</style>

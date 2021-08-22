@@ -1,0 +1,77 @@
+﻿@model HTLCareerPortal.tbl_Images
+
+@{
+    ViewBag.Title = "ImageInfo";
+    
+}
+<div class="container">
+    @Html.Partial("_stepsView")
+    @Html.ActionLink("<< Back", "GeneralInfo", "UpdateProfile", new object { }, new { @class = "Pre-btn" })
+    @Html.ActionLink("Next >>", "index", "Home", new object { }, new { @class = "Next-btn" })
+    <h4 class="step-number">You are at Step <span class="number">9<sup>th</sup></span> out of <span class="number">9</span> !</h4>
+    <h2 class="text-center">UPDATE YOUR PROFILE PICTURE</h2>
+
+    @using (Html.BeginForm("ImageInfo", "UpdateProfile", FormMethod.Post,
+                            new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.HiddenFor(model => model.ImageId, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.HiddenFor(model => model.ImageId, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ImageId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12 upload-btn">
+
+                    <h3>Upload Your Profile Picture</h3>
+                    <input type="file" name="file" id="file" accept="image/*" onchange="loadFile(event)" style="width: 100%;" /> 
+                    @Html.ValidationMessageFor(model => model.ImageUrl, "", new { @class = "text-danger" })
+                @*</div>
+                <div class="col-md-8">*@
+                    <h4 class="profile-image-text">YOUR PROFILE PICTURE</h4>
+                    @if (ViewBag.Check == "Yes")
+                {
+                        <img class="profile-image-selection" src="#" id="output" height="270px" width="320px" alt="Picture" />
+                    }
+                    else
+                    {
+                        <img class="profile-image-selection" src="~/ApplicantImages/@Model.ImageUrl" id="output" height="250px" width="250px" alt="Picture" />
+                    }
+
+                </div>
+            </div>
+            @*<div class="form-group">
+                    @Html.LabelFor(model => model.ImageUrl, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.ImageUrl, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ImageUrl, "", new { @class = "text-danger" })
+                    </div>
+                </div>*@
+
+            <div class="form-group">
+                @Html.HiddenFor(model => model.AppId, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.HiddenFor(model => model.AppId, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.AppId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-12">
+                    <input type="submit" value="Update" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+    
+    @*@Html.ActionLink("Next >>", "index", "Home", new object { }, new { @class = "Next-btn" })*@
+
+
+
+</div>

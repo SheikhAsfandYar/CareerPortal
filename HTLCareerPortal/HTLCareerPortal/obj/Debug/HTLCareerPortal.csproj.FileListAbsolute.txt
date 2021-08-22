@@ -1,0 +1,141 @@
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\roslyn\csc.exe
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\roslyn\System.Collections.Immutable.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\roslyn\vbc.exe
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\roslyn\VBCSCompiler.exe
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\roslyn\VBCSCompiler.exe.config
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\HTLCareerPortal.dll.config
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\HTLCareerPortal.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\HTLCareerPortal.pdb
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\Antlr3.Runtime.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\EntityFramework.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\EntityFramework.SqlServer.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.AspNet.Identity.Core.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.AspNet.Identity.Owin.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.Security.Cookies.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.Security.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.Security.Facebook.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.Security.Google.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.Security.OAuth.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.Security.Twitter.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Web.Infrastructure.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\Newtonsoft.Json.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\Owin.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\System.Web.Helpers.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\System.Web.Mvc.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\System.Web.Optimization.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\System.Web.Razor.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\System.Web.WebPages.Deployment.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\System.Web.WebPages.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\System.Web.WebPages.Razor.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\WebGrease.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\System.Web.Helpers.xml
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\System.Web.Mvc.xml
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\System.Web.Optimization.xml
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\System.Web.Razor.xml
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\System.Web.WebPages.xml
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\System.Web.WebPages.Deployment.xml
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\System.Web.WebPages.Razor.xml
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\Antlr3.Runtime.pdb
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\Newtonsoft.Json.xml
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\EntityFramework.xml
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\EntityFramework.SqlServer.xml
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.AspNet.Identity.Core.xml
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.AspNet.Identity.Owin.xml
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.xml
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.Security.xml
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.Security.Facebook.xml
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.Security.Cookies.xml
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.Security.OAuth.xml
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.Security.Google.xml
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.Security.Twitter.xml
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\obj\Debug\HTLCareerPortal.csprojResolveAssemblyReference.cache
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\obj\Debug\HTLCareerPortal.dll
+c:\users\asfands\documents\visual studio 2015\Projects\HTLCareerPortal\HTLCareerPortal\obj\Debug\HTLCareerPortal.pdb
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\roslyn\csc.exe
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\roslyn\vbc.exe
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\roslyn\VBCSCompiler.exe
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\HTLCareerPortal.dll.config
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\HTLCareerPortal.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\HTLCareerPortal.pdb
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\Antlr3.Runtime.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\ClosedXML.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\EntityFramework.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\EntityFramework.SqlServer.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.Security.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\Newtonsoft.Json.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\Owin.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\System.Web.Helpers.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\System.Web.Mvc.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\System.Web.Optimization.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\System.Web.Razor.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\System.Web.WebPages.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\System.Web.WebPages.Razor.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\WebGrease.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\DocumentFormat.OpenXml.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\System.Web.Helpers.xml
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\System.Web.Mvc.xml
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\System.Web.Optimization.xml
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\System.Web.Razor.xml
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\System.Web.WebPages.xml
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\System.Web.WebPages.Razor.xml
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\Antlr3.Runtime.pdb
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\Newtonsoft.Json.xml
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\EntityFramework.xml
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\EntityFramework.SqlServer.xml
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.xml
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.Security.xml
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\bin\DocumentFormat.OpenXml.xml
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\obj\Debug\HTLCareerPortal.dll
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\obj\Debug\HTLCareerPortal.pdb
+C:\Users\Asfands\Desktop\HTLCareerPortal\HTLCareerPortal\obj\Debug\HTLCareerPortal.csprojResolveAssemblyReference.cache

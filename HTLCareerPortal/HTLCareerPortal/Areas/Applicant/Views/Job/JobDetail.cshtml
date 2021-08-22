@@ -1,0 +1,52 @@
+﻿@model  IEnumerable<HTLCareerPortal.Areas.Applicant.Models.Joblist>
+
+@{
+    ViewBag.Title = "JobDetail";
+}
+
+@foreach (var item in Model)
+{
+<div class="container">
+    <h1 data-aos="fade-down-right" class="title-job text-center">@item.JobTile</h1>
+    <div data-aos="fade-left" class="job-detail">
+        <div class="row">
+            <div data-aos="fade-left" class="col-md-12">
+                <div class="scope-resp text-left">
+                    <h3>Scope &amp; Responsibilities :</h3>
+                    <p class="line-breaks"> @item.ScopeResponse</p>
+                </div>
+                <div class="Experience text-left ">
+                    <h3>Experience :</h3>
+                    <p>@item.Experience</p>
+                </div>
+                <div class="Qualification text-left">
+                    <h3>Qualification :</h3>
+                    <p> @item.Education</p>
+                </div>
+                <div class="skills">
+                    <h3>Skills :</h3>
+                    <p class="line-breaks">@item.SkillsRequired</p>
+                </div>
+                <div class="location">
+                    <h3>Location :</h3>
+                    <p>@item.CityName</p>
+                </div>
+                <div class="comp-benifits">
+                    <h3>Compensation &amp; Benifits :</h3>
+                    <p>@item.compensationBenifits</p>
+                </div>
+                <div class="message-Width">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger " })
+                    @if (ViewBag.ERROR != null)
+                {
+                        <a class="btn btn-default btn-danger error-btn" href="@Url.Action("UpdateProfile", "Home")">Update Profile</a>
+                    }
+                </div>
+                <div class="apply-btn">
+                    <a class="btn btn-default " href="@Url.Action("ApplyJob", "Job", new { Jobid = item.jobId })">Apply For This Job</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+}

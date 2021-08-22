@@ -1,0 +1,56 @@
+﻿@model HTLCareerPortal.tbl_CareerObjective
+
+@{
+    ViewBag.Title = "CareerObjective";
+}
+<div class="container">
+    @Html.Partial("_stepsView")
+    @Html.ActionLink("<< Back", "PersonalDetail", new object { }, new { @class = "Pre-btn" })
+    @Html.ActionLink("Next >>", "EducationDetail", new object { }, new { @class = "Next-btn" })
+    <h4 class="step-number">You are at Step <span class="number">3<sup>rd</sup></span> out of <span class="number">9</span> !</h4>
+    <h2 class="text-center">UPDATE YOUR CAREER OBJECTIVE</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.HiddenFor(model => model.CO_Id, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.HiddenFor(model => model.CO_Id, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CO_Id, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class=" col-md-12">
+                    <h3>Career Objective</h3>
+                    @Html.TextAreaFor(model => model.CareerObjective, new { @class = " form-control objective" })
+                    @Html.ValidationMessageFor(model => model.CareerObjective, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.HiddenFor(model => model.App_Id, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.HiddenFor(model => model.App_Id, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.App_Id, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class=" col-md-12">
+                    <input  type="submit" value="Update" class="btn btn-default save-btn" />
+                </div>
+            </div>
+        </div>
+    }
+
+
+
+
+    @*@Html.ActionLink("Next >>", "EducationDetail", new object { }, new { @class = "Next-btn" })*@
+</div>

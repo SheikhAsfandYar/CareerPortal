@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HTLCareerPortalModelStoreContainer" CdmEntityContainer="HTLCareerEntities">
+    <EntitySetMapping Name="citySetups">
+      <EntityTypeMapping TypeName="HTLCareerPortalModel.citySetup">
+        <MappingFragment StoreEntitySet="citySetup">
+          <ScalarProperty Name="cityName" ColumnName="cityName" />
+          <ScalarProperty Name="cityCode" ColumnName="cityCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="jobApplyings">
+      <EntityTypeMapping TypeName="HTLCareerPortalModel.jobApplying">
+        <MappingFragment StoreEntitySet="jobApplying">
+          <ScalarProperty Name="ApplyDate" ColumnName="ApplyDate" />
+          <ScalarProperty Name="App_Id" ColumnName="App_Id" />
+          <ScalarProperty Name="JobId" ColumnName="JobId" />
+          <ScalarProperty Name="pk" ColumnName="pk" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobSetups">
+      <EntityTypeMapping TypeName="HTLCareerPortalModel.JobSetup">
+        <MappingFragment StoreEntitySet="JobSetup">
+          <ScalarProperty Name="pk" ColumnName="pk" />
+          <ScalarProperty Name="CompensationBenefits" ColumnName="CompensationBenefits" />
+          <ScalarProperty Name="Experience" ColumnName="Experience" />
+          <ScalarProperty Name="ScopeOfResponsibility" ColumnName="ScopeOfResponsibility" />
+          <ScalarProperty Name="JobLocation" ColumnName="JobLocation" />
+          <ScalarProperty Name="JobStatus" ColumnName="JobStatus" />
+          <ScalarProperty Name="JobClosingDate" ColumnName="JobClosingDate" />
+          <ScalarProperty Name="JobOpeningDate" ColumnName="JobOpeningDate" />
+          <ScalarProperty Name="SkillsRequired" ColumnName="SkillsRequired" />
+          <ScalarProperty Name="JobRequirements" ColumnName="JobRequirements" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Education" ColumnName="Education" />
+          <ScalarProperty Name="JobType" ColumnName="JobType" />
+          <ScalarProperty Name="TotalPosition" ColumnName="TotalPosition" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_CareerObjective">
+      <EntityTypeMapping TypeName="HTLCareerPortalModel.tbl_CareerObjective">
+        <MappingFragment StoreEntitySet="tbl_CareerObjective">
+          <ScalarProperty Name="App_Id" ColumnName="App_Id" />
+          <ScalarProperty Name="CareerObjective" ColumnName="CareerObjective" />
+          <ScalarProperty Name="CO_Id" ColumnName="CO_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Department">
+      <EntityTypeMapping TypeName="HTLCareerPortalModel.tbl_Department">
+        <MappingFragment StoreEntitySet="tbl_Department">
+          <ScalarProperty Name="DepHod" ColumnName="DepHod" />
+          <ScalarProperty Name="DepName" ColumnName="DepName" />
+          <ScalarProperty Name="DepId" ColumnName="DepId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Experience">
+      <EntityTypeMapping TypeName="HTLCareerPortalModel.tbl_Experience">
+        <MappingFragment StoreEntitySet="tbl_Experience">
+          <ScalarProperty Name="PI_Id" ColumnName="PI_Id" />
+          <ScalarProperty Name="App_Id" ColumnName="App_Id" />
+          <ScalarProperty Name="JobSpecialization" ColumnName="JobSpecialization" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="Industry" ColumnName="Industry" />
+          <ScalarProperty Name="CompanyAddress" ColumnName="CompanyAddress" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="Exp_Id" ColumnName="Exp_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_FOI">
+      <EntityTypeMapping TypeName="HTLCareerPortalModel.tbl_FOI">
+        <MappingFragment StoreEntitySet="tbl_FOI">
+          <ScalarProperty Name="FOI_Name" ColumnName="FOI_Name" />
+          <ScalarProperty Name="FOI_Id" ColumnName="FOI_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_GeneralInfo">
+      <EntityTypeMapping TypeName="HTLCareerPortalModel.tbl_GeneralInfo">
+        <MappingFragment StoreEntitySet="tbl_GeneralInfo">
+          <ScalarProperty Name="GeneralStatus" ColumnName="GeneralStatus" />
+          <ScalarProperty Name="App_Id" ColumnName="App_Id" />
+          <ScalarProperty Name="Ans_Three_Text" ColumnName="Ans_Three_Text" />
+          <ScalarProperty Name="Ans_Three_Status" ColumnName="Ans_Three_Status" />
+          <ScalarProperty Name="Ans_Two_Text" ColumnName="Ans_Two_Text" />
+          <ScalarProperty Name="Ans_Two_Status" ColumnName="Ans_Two_Status" />
+          <ScalarProperty Name="Ans_One_Text" ColumnName="Ans_One_Text" />
+          <ScalarProperty Name="Ans_One_Status" ColumnName="Ans_One_Status" />
+          <ScalarProperty Name="Ans_Id" ColumnName="Ans_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Images">
+      <EntityTypeMapping TypeName="HTLCareerPortalModel.tbl_Images">
+        <MappingFragment StoreEntitySet="tbl_Images">
+          <ScalarProperty Name="AppId" ColumnName="AppId" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_PersonalInfo">
+      <EntityTypeMapping TypeName="HTLCareerPortalModel.tbl_PersonalInfo">
+        <MappingFragment StoreEntitySet="tbl_PersonalInfo">
+          <ScalarProperty Name="App_Id" ColumnName="App_Id" />
+          <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+          <ScalarProperty Name="PlaceOfBirth" ColumnName="PlaceOfBirth" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+          <ScalarProperty Name="CurrentDesignation" ColumnName="CurrentDesignation" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="PI_Id" ColumnName="PI_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ProfessionalReference">
+      <EntityTypeMapping TypeName="HTLCareerPortalModel.tbl_ProfessionalReference">
+        <MappingFragment StoreEntitySet="tbl_ProfessionalReference">
+          <ScalarProperty Name="App_Id" ColumnName="App_Id" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="Organization" ColumnName="Organization" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Relationship" ColumnName="Relationship" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PR_Id" ColumnName="PR_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Resumes">
+      <EntityTypeMapping TypeName="HTLCareerPortalModel.tbl_Resumes">
+        <MappingFragment StoreEntitySet="tbl_Resumes">
+          <ScalarProperty Name="AppId" ColumnName="AppId" />
+          <ScalarProperty Name="ResumeUrl" ColumnName="ResumeUrl" />
+          <ScalarProperty Name="ResumeId" ColumnName="ResumeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Education">
+      <EntityTypeMapping TypeName="HTLCareerPortalModel.tbl_Education">
+        <MappingFragment StoreEntitySet="tbl_Education">
+          <ScalarProperty Name="App_Id" ColumnName="App_Id" />
+          <ScalarProperty Name="CGPA" ColumnName="CGPA" />
+          <ScalarProperty Name="Specialization" ColumnName="Specialization" />
+          <ScalarProperty Name="Institute" ColumnName="Institute" />
+          <ScalarProperty Name="CompletionYear" ColumnName="CompletionYear" />
+          <ScalarProperty Name="Degree" ColumnName="Degree" />
+          <ScalarProperty Name="Edu_Id" ColumnName="Edu_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_JobSalaryPreference">
+      <EntityTypeMapping TypeName="HTLCareerPortalModel.tbl_JobSalaryPreference">
+        <MappingFragment StoreEntitySet="tbl_JobSalaryPreference">
+          <ScalarProperty Name="App_Id" ColumnName="App_Id" />
+          <ScalarProperty Name="ExpectedGrossSalary" ColumnName="ExpectedGrossSalary" />
+          <ScalarProperty Name="Benifits" ColumnName="Benifits" />
+          <ScalarProperty Name="CurrentSalary" ColumnName="CurrentSalary" />
+          <ScalarProperty Name="FOI3" ColumnName="FOI3" />
+          <ScalarProperty Name="FOI2" ColumnName="FOI2" />
+          <ScalarProperty Name="FOI1" ColumnName="FOI1" />
+          <ScalarProperty Name="PWT3" ColumnName="PWT3" />
+          <ScalarProperty Name="PWT2" ColumnName="PWT2" />
+          <ScalarProperty Name="PWT1" ColumnName="PWT1" />
+          <ScalarProperty Name="JSP_ID" ColumnName="JSP_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_AdminToHod">
+      <EntityTypeMapping TypeName="HTLCareerPortalModel.tbl_AdminToHod">
+        <MappingFragment StoreEntitySet="tbl_AdminToHod">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="AppId" ColumnName="AppId" />
+          <ScalarProperty Name="JobId" ColumnName="JobId" />
+          <ScalarProperty Name="DepId" ColumnName="DepId" />
+          <ScalarProperty Name="ATHid" ColumnName="ATHid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_SignUp">
+      <EntityTypeMapping TypeName="HTLCareerPortalModel.tbl_SignUp">
+        <MappingFragment StoreEntitySet="tbl_SignUp">
+          <ScalarProperty Name="Dep_Id" ColumnName="Dep_Id" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="CellNo" ColumnName="CellNo" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ApplicantId" ColumnName="ApplicantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

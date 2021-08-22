@@ -1,0 +1,110 @@
+﻿@model IEnumerable<HTLCareerPortal.tbl_PersonalInfo>
+
+@{
+    ViewBag.Title = "PersonalDetail";
+   
+}
+<div class="container">
+    @Html.Partial("_stepsView")
+    @Html.ActionLink("<< Back", "ResumeInfo", "UpdateProfile", new object { }, new { @class = "Pre-btn" })
+    @Html.ActionLink("Next >>", "CareerObjective", "UpdateProfile", new object { }, new { @class = "Next-btn" })
+    <h4 class="step-number">You are at Step <span class="number">2<sup>nd</sup></span> out of <span class="number">9</span> !</h4>
+
+    <h2 class="text-center">UPDATE YOUR PERSONAL DETAIL</h2>
+
+    <p>
+        @if (Model.Count() == 0)
+        {
+            @Html.ActionLink("Enter Personal Information", "Create")
+        }
+
+    </p>
+    <table class="table">
+        <tr>
+
+            <th>
+               First Name
+            </th>
+            <th>
+                Middle Name
+            </th>
+            <th>
+              Last Name 
+            </th>
+            <th>
+                Company
+            </th>
+            <th>
+               Current Designation
+            </th>
+            <th>
+                 CNIC
+            </th>
+            <th>
+               PostalCode
+            </th>
+            <th>
+               Date Of Birth
+            </th>
+            <th>
+                Place Of Birth
+            </th>
+            <th>
+                Marital Status
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MiddleName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Company)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CurrentDesignation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CNIC)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PostalCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DOB)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PlaceOfBirth)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaritalStatus)
+                </td>
+                <td>
+                    @Html.ActionLink("Update", "UpdatePersonalInfo", new { id = item.PI_Id })
+                    @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+                </td>
+            </tr>
+        }
+
+    </table>
+    
+    @*@Html.ActionLink("Next >>", "CareerObjective", "UpdateProfile", new object { }, new { @class = "Next-btn" })*@
+
+
+
+
+    @*<a class="Continue-button" href="@Url.Action("EducationDetail","UpdateProfile")">Save &amp; Continue</a>*@
+
+</div>

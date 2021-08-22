@@ -1,0 +1,50 @@
+﻿@model IEnumerable<HTLCareerPortal.tbl_AdminToHod>
+<h2 class="text-center text-danger">
+    APPLICANTS SENT TO HOD's.
+</h2>
+<table class="table">
+    <tr>
+        <th>
+          DEPARTMENT
+        </th>
+        <th>
+          HOD
+        </th>
+        <th>
+          JOB TITLE
+        </th>
+        <th>
+          APPLICANT
+        </th>
+        <th>
+          EMAIL ID
+        </th>
+        <th>
+            REMOVE
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_Department.DepName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_Department.DepHod)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobSetup.JobTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_SignUp.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_SignUp.EmailID)
+        </td>
+        <td>
+            @Html.ActionLink("Remove", "DelAdminToHod", new {  id=item.ATHid  }, new { @class = "btn btn-sm btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

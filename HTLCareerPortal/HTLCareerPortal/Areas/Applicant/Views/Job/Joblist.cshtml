@@ -1,0 +1,115 @@
+﻿@model  IEnumerable<HTLCareerPortal.Areas.Applicant.Models.Joblist>
+@{
+    ViewBag.Title = "Joblist";
+}
+
+<link href="~/Content/dashboard.css" rel="stylesheet" />
+<div class="content-box">
+    <section class="section section-slider">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img class="img-responsive slider-image" src="~/slider/back1.jpg" alt="image" style="width:100%; height:610px" />
+                </div>
+                <div class="item ">
+                    <img class="img-responsive slider-image-blur" src="~/slider/back2.jpg" alt="image" style="width:100%; height:610px" />
+                </div>
+                <div class="item ">
+                    <img class="img-responsive slider-image-blur" src="~/slider/back3.jpeg" alt="image" style="width:100%; height:610px" />
+                </div>
+                <div class="item ">
+                    <img class="img-responsive slider-image-blur" src="~/slider/back4.jpg" alt="image" style="width:100%; height:610px; opa " />
+                </div>
+                <div class="item ">
+                    <img class="img-responsive slider-image-blur" src="~/slider/back5.jpeg" alt="image" style="width:100%; height:610px" />
+                </div>
+                <div class="item ">
+                    <img class="img-responsive slider-image-blur" src="~/slider/back6.jpg" alt="image" style="width:100%; height:610px" />
+                </div>
+                <div class="item ">
+                    <img class="img-responsive slider-image-blur" src="~/slider/back7.jpg" alt="image" style="width:100%; height:610px" />
+                </div>
+            </div>
+        </div>
+    </section>
+        <section class="section section-hero">
+            <div class="hero-box">
+                <div class="container">
+                    @*<div class="hero-text align-center">
+                            <h1>Search Your Product Now!</h1>
+
+                            <p> and get its price and Location at your first click!</p>
+                        </div>*@
+                    <div data-aos="zoom-in-up" class="destinations-form">
+                        <div class="input-line">
+                            @using (Html.BeginForm())
+                            {
+                                <input type="text" id="Text1" name="Jobsearch" placeholder="Enter Job Title Here !" class="form-input check-value" />
+                                <input type="submit" name="search" id="search" value="FIND NOW !" class="displaylist sum form-submit btn btn-special " />
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- list Box -->
+            <div data-aos="flip-up"  data-aos-duration="1000" class="container">
+                <div class="statistics-box1 Heading-box">
+                    <div class="statistics-item">
+                        <img src="~/img/jobTitle.jpg" height="65px" width="60px" />
+                        <p class="value">JOB TITLE</p>
+                    </div>
+                    <div class="statistics-item">
+                        <img src="~/img/department.png" height="60px" width="60px" />
+                        <p class="value">JOB TYPE</p>
+                    </div>
+                    <div class="statistics-item">
+                        <img src="~/img/location.jpg" height="60px" width="60px" />
+                        <p class="value">LOCATION</p>
+                    </div>
+                    <div class="statistics-item">
+                        <img src="~/img/detail.png" height="60px" width="60px" />
+                        <p class=" value">DETAIL</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section  class="section section-destination">
+            <!-- Title -->
+            <div class="section-title">
+                <div class="container">
+                    <h2 class="title">JOBS LIST !</h2>
+                </div>
+            </div>
+        </section>
+        @foreach (var item in Model)
+        {
+            <div class="container">
+                <div data-aos="zoom-out-up" class="statistics-box">
+
+                    <div  class="statistics-item">
+
+                        <p class="value">@item.JobTile.ToString()</p>
+                    </div>
+
+                    <div  class="statistics-item">
+
+
+                        <p class="value">@item.JobType</p>
+
+                    </div>
+
+                    <div  class="statistics-item">
+
+                        <p class="value">@item.CityName</p>
+                    </div>
+
+                    <div class="statistics-item ">
+
+                        <p class="value flex"><a class="bttn" href="@Url.Action("JobDetail", "Job", new { id = item.jobId })">DETAIL</a></p>
+                    </div>
+
+                </div>
+            </div>
+        }
+
+</div>

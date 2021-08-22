@@ -1,0 +1,123 @@
+﻿@model HTLCareerPortal.JobSetup
+
+@{
+    ViewBag.Title = "DetailJob";
+}
+
+<h2>DetailJob</h2>
+
+<div>
+    <h4>JobSetup</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.JobTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalPosition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalPosition)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Education)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Education)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobRequirements)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobRequirements)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SkillsRequired)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SkillsRequired)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobOpeningDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobOpeningDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobClosingDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobClosingDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.citySetup.cityName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ScopeOfResponsibility)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ScopeOfResponsibility)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Experience)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Experience)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CompensationBenefits)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompensationBenefits)
+        </dd>
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Jobs", new { area = "HOD" }, new { @class = "btn btn-sm btn-default" })
+    @Html.ActionLink("Update", "UpdateJob", new {  id = Model.pk },  new { @class = "btn btn-default btn-info" }) 
+</p>

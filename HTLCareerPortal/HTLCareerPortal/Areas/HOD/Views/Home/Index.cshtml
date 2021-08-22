@@ -1,0 +1,64 @@
+﻿@model IEnumerable<HTLCareerPortal.tbl_AdminToHod>
+<h2 class="text-center text-danger main-heading">LIST OF APPLICANTS SENT BY ADMIN...!</h2>
+@if (ViewBag.check == "True") {
+@Html.ValidationSummary(true, "", new { @class = "btn-sm btn btn-success error-notification " })
+}
+else { 
+@Html.ValidationSummary(true, "", new { @class = "btn-sm btn btn-danger error-notification" })
+}
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+
+            <th>
+                DEPARTMENT
+            </th>
+            <th>
+               JOB TITLE
+            </th>
+            <th>
+               APPLICANT NAME
+            </th>
+            <th>
+               EMAIL ID
+            </th>
+            <th>
+               PROFILE
+             </th>
+            <th>
+                SHORTLIST </th>
+            <th>
+             REJECT
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tbl_Department.DepName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JobSetup.JobTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tbl_SignUp.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tbl_SignUp.EmailID)
+                </td>
+                <td>
+                    @Html.ActionLink("Profile", "ApplicantProfile","Home", new {area ="Admin", id = item.AppId }, new { @class = "btn btn-sm btn-info" })
+               </td>
+               <td>
+                 
+                        @Html.ActionLink("SHORTLIST", "ReturnToAdmin", new { status = "True" ,id = item.ATHid}, new { @class= "btn btn-sm btn-success" }) 
+               </td>
+                <td>
+                        @Html.ActionLink("REJECT", "ReturnToAdmin", new {  status ="False", id = item.ATHid }, new { @class = "btn btn-sm btn-danger" })
+               </td>
+            </tr>
+        }
+
+    </table>
+</div>

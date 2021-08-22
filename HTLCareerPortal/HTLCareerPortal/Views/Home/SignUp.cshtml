@@ -1,0 +1,81 @@
+﻿@model HTLCareerPortal.tbl_SignUp
+@using HTLCareerPortal.Models
+@{
+    ViewBag.Title = "SignUp";
+    Layout = "~/Views/Shared/_signup-login.cshtml";
+}
+<section class="signup">
+<div class="container">
+    <div class="signup-content">
+        <div class="signup-form">
+            <h2 class="form-title">Sign up</h2>
+            @using (Html.BeginForm("SignUp", "Home", FormMethod.Post))
+            {
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <label for="Name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "input", placeholder ="Name" } })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label for="FatherName"><i class="zmdi zmdi-account-o material-icons-name"></i></label>
+                    @Html.EditorFor(model => model.FatherName, new { htmlAttributes = new { @class = "input", placeholder = "Father Name" } })
+                    @Html.ValidationMessageFor(model => model.FatherName, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label for="Gender"><i class="zmdi zmdi-male-female material-icons-name"></i></label>
+                    @Html.DropDownList("GENDER", new SelectList(Enum.GetValues(typeof(Gender))),"GENDER", new {@class = "Gender" })
+                    @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="form-group">
+                    <label for="Address"><i class="zmdi zmdi-home zmdi-fw"></i></label>
+                    @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "input", placeholder = "Address" } })
+                    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label for="City"><i class="zmdi zmdi-city zmdi-fw"></i></label>
+                    @Html.DropDownListFor(model => model.City, new SelectList(Enum.GetValues(typeof(Cities))),"Select City", new { @class = "Gender" })
+                    @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="form-group">
+                    <label for="email"><i class="zmdi zmdi-email"></i></label>
+                    @Html.EditorFor(model => model.EmailID, new { htmlAttributes = new { @class = "input", placeholder = "Email" } })
+                    @Html.ValidationMessageFor(model => model.EmailID, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label for="CellNo"><i class="zmdi zmdi-dialpad zmdi-fw"></i></label>
+                    @Html.EditorFor(model => model.CellNo, new { htmlAttributes = new { @class = "input", placeholder = "Cell No." } })
+                    @Html.ValidationMessageFor(model => model.CellNo, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="form-group">
+                    <label for="password"><i class="zmdi zmdi-lock"></i></label>
+                    @Html.PasswordFor(model => model.Password,  new { @class = "input", placeholder = "Password" })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                    <input type="password" id="re_pass" name="re_pass" placeholder="Repeat your password"  />
+                </div>
+                <div class="form-group">
+                    <div class="">
+                        <input type="submit" value="Register" class="btn btn-default form-submit" />
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="signup-image">
+            <img src="~/images/signup-image.jpg" alt="sing up image">
+            <a href="@Url.Action("login","Home")" class="signup-image-link">Already Member ? Sign In</a>
+        </div>
+    </div>
+</div>
+</section>
+@*<div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>*@

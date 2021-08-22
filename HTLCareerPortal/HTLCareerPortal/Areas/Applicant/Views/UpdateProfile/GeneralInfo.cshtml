@@ -1,0 +1,113 @@
+﻿@model HTLCareerPortal.tbl_GeneralInfo
+
+@{
+    ViewBag.Title = "GeneralInfo";
+   
+}
+<div class="container">
+    @Html.Partial("_stepsView")
+    @Html.ActionLink("<< Back", "ProfessionalReference", "UpdateProfile", new object { }, new { @class = "Pre-btn" })
+    @Html.ActionLink("Next >>", "ImageInfo", "UpdateProfile", new object { }, new { @class = "Next-btn" })
+    <h4 class="step-number">You are at Step <span class="number">8<sup>th</sup></span> out of <span class="number">9</span> !</h4>
+    <h2 class="text-center">UPDATE GENERAL INFORMATION ABOUT YOURSELF</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.HiddenFor(model => model.Ans_Id, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.HiddenFor(model => model.Ans_Id, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Ans_Id, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-12">
+                    @Html.Label("Do you Have Any Relative or Reference Working at Hi-Tech Lubricants Limited?", htmlAttributes: new { @class = "control-label" })
+                    @Html.DropDownListFor(model => model.Ans_One_Status, new SelectList(new[] { new SelectListItem { Value = "true", Text = "Yes" }, new SelectListItem { Value = "false", Text = "No" }, }, "Value", "Text"), new { @class = "form-control option" })
+                    @Html.ValidationMessageFor(model => model.Ans_One_Status, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div id="Ans_One_Text1" class="form-group">
+                <div class="col-md-12 js-div">
+                    @Html.Label("If Yes, What is his/her name :", htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.Ans_One_Text, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Name of Relative If any." } })
+                    @Html.ValidationMessageFor(model => model.Ans_One_Text, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    @Html.Label("Are you suffering from any major illness/chronic health problems?", htmlAttributes: new { @class = "control-label" })
+                    @Html.DropDownListFor(model => model.Ans_Two_Status, new SelectList(new[] { new SelectListItem { Value = "true", Text = "Yes" }, new SelectListItem { Value = "false", Text = "No" }, }, "Value", "Text"), new { @class = "form-control option1" })
+                    @Html.ValidationMessageFor(model => model.Ans_Two_Status, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div id="Ans_One_Text2" class="form-group">
+                <div class="col-md-12 js-div1">
+                    @Html.Label("If Yes, Enter details:", htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.Ans_Two_Text, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter detal about illnes If any." } })
+                    @Html.ValidationMessageFor(model => model.Ans_Two_Text, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    @Html.Label(" Have you ever been involved in any criminal activity or have been convicted?", htmlAttributes: new { @class = "control-label" })
+                    @Html.DropDownListFor(model => model.Ans_Three_Status, new SelectList(new[] { new SelectListItem { Value = "true", Text = "Yes" }, new SelectListItem { Value = "false", Text = "No" }, }, "Value", "Text"), new { @class = "form-control option2" })
+                    @Html.ValidationMessageFor(model => model.Ans_Three_Status, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div id="Ans_One_Text3" class="form-group">
+                <div class="col-md-12 js-div2">
+                    @Html.Label("If Yes, Enter details:", htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.Ans_Three_Text, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter detail about criminal activity If any." } })
+                    @Html.ValidationMessageFor(model => model.Ans_Three_Text, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <p>
+                        I hereby certify that all entries on this job application and any attachments are
+                        true and complete.I also agree and understand that any falsification
+                        of this information may result in my forfeiture of job application.
+                    </p>
+                    <p>
+                        understand that all information on this job application is subject to verification
+                        and I consent to background checks.  I also agree that you may contact references and
+                        educational institutions listed on this application
+                    </p>
+
+                    @Html.RadioButtonFor(model => model.GeneralStatus, "Accept", new { @class = "radio-inline", @checked = "checked" }) I Accept:
+                    @Html.RadioButtonFor(model => model.GeneralStatus, "Decline", new { @class = "radio-inline" })  Decline:
+                    @Html.ValidationMessageFor(model => model.Ans_Three_Text, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.HiddenFor(model => model.App_Id, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.HiddenFor(model => model.App_Id, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.App_Id, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-12">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+    @*<div>
+
+        @Html.ActionLink("Next >>", "ImageInfo", "UpdateProfile", new object { }, new { @class = "Next-btn" })
+    </div>*@
+
+
+
+</div>
